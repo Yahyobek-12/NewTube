@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Doppio+One&family=Foldit:wght@100..900&family=Frijole&family=Love+Ya+Like+A+Sister&family=Piedra&family=Rubik+Maps&display=swap');
+
+.nav {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    color: #fff;
+    position: absolute;
+    align-items: center;
+    background: #0f0f0f;
+    position: fixed; z-index: 10;
+    justify-content: space-around;
+}
+
+.logo {
+    width: 150px;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    text-decoration: none;
+    font-family: sans-serif;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 90px;
+    height: 90px;
+}
+
+.nav-form {
+    width: 40%;
+    height: 70%;
+    display: flex;
+    overflow: hidden;
+    border-radius: 10px;
+    align-items: center;
+    border: 1px solid #555;
+    justify-content: space-between;
+}
+
+.nav-form input {
+    width: 85%;
+    height: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 0 10px;
+    font-size: 18px;
+    background: transparent;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.form-btn,
+.back-btn {
+    width: 10%;
+    height: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+    transition: .3s;
+    background: #222;
+    padding-top: .3rem;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.search-menu {
+    display: none;
+}
+
+.back-btn {
+    display: none;
+}
+
+.categories {
+    left: 0;
+    top: 70px;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    padding: 0 10px;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    position: fixed; z-index: 10;
+}
+
+.cat-in {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cat-in a {
+    color: #fff;
+    transition: .3s;
+    font-size: 14px;
+    padding: 10px 12px;
+    background: #222;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+.cat-in a.active {
+    color: #000;
+    background: #fff;
+}
+
+.cat-in a:hover {
+    transition: .3s;
+    opacity: 0.8;
+}
+
+.form-btn:hover,
+.back-btn:hover {
+    opacity: 0.7;
+    transition: .3s;
+}
+
+/* MEDIA SCREEN */
+
+@media only screen and (max-width: 1030px) {
+    .cat-in {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-form {
+        display: none;
+    }
+
+    .nav-form-active {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        position: absolute;
+        background: #0f0f0f;
+        position: fixed; z-index: 10;
+        border-bottom: 3px solid #222;
+    }
+
+    .nav-form-active input {
+        width: 72%;
+        height: 100%;
+        border: none;
+        outline: none;
+        color: #fff;
+        padding: 0 10px;
+        font-size: 18px;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .form-btn {
+        width: 14%;
+        border-radius: 0;
+    }
+
+    .search-menu {
+        cursor: pointer;
+        font-size: 30px;
+        display: initial;
+    }
+
+    .back-btn {
+        width: 14%;
+        display: initial;
+        border-radius: 0;
+    }
+
+    .categories {
+        overflow-x: scroll;
+        padding-bottom: 0.5rem;
+    }
+
+    .cat-in a {
+        margin-left: 0.5rem;
+    }
+
+    .cat-in a:hover {
+        opacity: 1;
+    }
+
+    .cat-in a:first-child {
+        margin-left: 1rem;
+    }
+
+    .categories::-webkit-scrollbar {
+        height: 5px;
+        background: transparent;
+    }
+
+    .categories::-webkit-scrollbar-thumb {
+        background: #222;
+    }
+
+}
+
+@media only screen and (max-width: 430px) {
+    .cat-in a:first-child {
+        margin-left: 10rem;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .cat-in a:first-child {
+        margin-left: 11rem;
+    }
+
+}
