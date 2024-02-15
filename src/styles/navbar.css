@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Doppio+One&family=Foldit:wght@100..900&family=Frijole&family=Love+Ya+Like+A+Sister&family=Piedra&family=Rubik+Maps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+
+@font-face {
+    font-family: myFamily;
+    src: url(../images/insta.otf);
+}
 
 .nav {
     top: 0;
@@ -20,8 +25,12 @@
     color: #fff;
     align-items: center;
     text-decoration: none;
-    font-family: sans-serif;
     justify-content: space-between;
+}
+
+.logo h2 {
+    letter-spacing: 5px;
+    font-family: myFamily;
 }
 
 .logo img {
