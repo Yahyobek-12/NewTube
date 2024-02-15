@@ -21,3 +21,8 @@ export const mobileLinks = [
     { name: <NavLink to='/history'><BsCollectionPlayFill className='mob-icons' /></NavLink>, id: 3 },
     { name: <NavLink to='/profile'><IoPersonCircle className='mob-icons' /></NavLink>, id: 4 },
 ]
+
+export { default as Nav } from '../components/Nav.jsx';
+export { default as Navbar } from '../components/Navbar';
+export { default as Shorts } from '../components/Shorts.jsx';
+export { default as Home } from '../components/Home.jsx';

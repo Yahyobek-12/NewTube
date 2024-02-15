@@ -1,42 +1,34 @@
-import axios from 'axios';
 import { createContext, useState, useEffect } from 'react'
+import { homeVideo_API, shortsVideo_API } from '../store/store';
     
 export const GlobalContext = createContext()
 
 const Provider = ({ children }) => {
   const [shortVideos, setShortVideos] = useState([]);
+  const [homeVideos, setHomeVideos] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    document.title = 'NewTube || Shorts'
+    fetch(homeVideo_API)
+      .then((response) => response.json())
+      .then(data => {
+        setLoading(false);
+        console.log('Home', data)
+        setHomeVideos(data.items)
+      })
+  }, [])
 
-      const fetchVideos = async () => {
-        try {
-          const response = await axios.get(
-            'https://youtube.googleapis.com/youtube/v3/videos',
-            {
-              params: {
-                part: 'snippet, contentDetails, statistics',
-                chart: 'mostPopular',
-                maxResults: 200,
-                regionCode: 'SA',
-                key: 'AIzaSyBqE8OMbdKd-7NOT_LBvkgATb8huk3sPHI'
-              }
-            }
-          );
-          setLoading(false);
-          console.log(response.data.items);
-          setShortVideos(response.data.items);
-        } catch (error) {
-          console.error('Error fetching videos:', error);
-        }
-      };
-  
-      fetchVideos();
+  useEffect(() => { 
+      fetch(shortsVideo_API)
+        .then((response) => response.json())
+        .then(data => {
+          setLoading(false)
+          setShortVideos(data.items)
+        })
     }, [loading]);
 
   return (
-    <GlobalContext.Provider value={{ shortVideos, loading }}>
+    <GlobalContext.Provider value={{ shortVideos, homeVideos, loading }}>
       {children}
     </GlobalContext.Provider>
   )

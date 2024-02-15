@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&family=Rubik+Maps&display=swap');
+
+.home {
+    top: 80px;
+    left: 80px;
+    width: 100%;
+    height: 88vh;
+    color: #fff;
+    position: absolute;
+    position: fixed; overflow-y: scroll;
+}
+
+.home::-webkit-scrollbar {
+    display: none;
+}
+
+.home h2 {
+    margin-left: 1rem;
+    font-family: "Expletus Sans", sans-serif;
+}
+
+.home-in {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+    justify-content: flex-start;
+}
+
+.home-card {
+    width: 360px;
+    padding: 10px;
+    height: 350px;
+    color: #fff;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    position: relative;
+    text-decoration: none;
+}
+
+.home-card img {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.home-card-txt {
+    margin-top: 0.5rem;
+}
+
+.home-card-txt h5 {
+    bottom: 5px;
+    color: #999;
+    position: absolute;
+}
+
+.home-card-txt div {
+    bottom: 0;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    display: flex;
+    position: absolute;
+    border-radius: 50px;
+    align-items: center;
+    margin-right: 0.5rem;
+    justify-content: center;
+    text-transform: uppercase;
+    background: linear-gradient(-70deg, #8c52ff, #ff914d);
+}
+
+.loading-home-card {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* MEDIA SCREEN */
+
+@media only screen and (max-width: 780px) {
+    .home {
+        left: 0;
+    }
+
+    .home h2 {
+        margin-left: 1rem;
+        text-align: start;
+    }
+
+    .loading-home-card {
+        height: 45vh;
+    }
+
+    .home {
+        padding-bottom: 5rem;
+    }
+}
