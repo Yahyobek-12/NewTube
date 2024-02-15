@@ -1,7 +1,7 @@
+import 'animate.css';
 import '../styles/home.css'
-import me from '../images/win-1.jpg'
-import { Link } from 'react-router-dom'
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { GlobalContext } from '../provider/provider'
 
 const Home = () => {
@@ -18,7 +18,7 @@ const Home = () => {
             ): (
               <>
                 {homeVideos.map(item => (
-                  <Link to='' className="home-card" key={item.id}>
+                  <Link to='' className="home-card animate__animated animate__fadeIn" key={item.id}>
                     <img src={item.snippet.thumbnails.standard.url} alt='video' />
                     <div className="home-card-txt">
                       <h4>{item.snippet.title.slice(0, 80)}</h4>

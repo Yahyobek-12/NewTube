@@ -1,4 +1,5 @@
 import 'swiper/css';
+import 'animate.css';
 import '../styles/shorts.css';
 import { useContext} from 'react';
 import { FaRegEye } from "react-icons/fa";
@@ -13,7 +14,7 @@ const Shorts = () => {
 
     return (
         <div className='shorts'>
-            <div className="shorts-card">
+            <div className="shorts-card animate__animated animate__fadeIn">
                 {loading ? (
                     <div className='loading-card'>
                         <div className="loading"></div>
