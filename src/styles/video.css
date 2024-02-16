@@ -1,0 +1,52 @@
+.video {
+    top: 80px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    padding-bottom: 2rem;
+    justify-content: center;
+}
+
+.video-card {
+    width: 80%;
+    height: 100%;
+    padding: 10px;
+}
+
+.video-pl {
+    width: 100%;
+    height: 80%;
+    border: none;
+    border-radius: 10px;
+}
+
+.video-content {
+    color: #fff;
+    margin-top: 1rem;
+}
+
+.video-body {
+    width: 100%;
+    height: 70px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    border-radius: 10px;
+    background: #222;
+}
+
+.video-body div:first-child {
+    margin-left: 0;
+}
+
+.video-body div {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    margin-left: 1rem;
+    align-items: center;
+    justify-content: space-evenly;
+}

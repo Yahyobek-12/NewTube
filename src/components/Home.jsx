@@ -18,9 +18,9 @@ const Home = () => {
         ) : (
           <>
             {homeVideos.map(item => (
-              <Link to='' className="home-card animate__animated animate__fadeIn" key={item.id}>
+              <Link to={`/video/${item.id}`} className="home-card animate__animated animate__fadeIn" key={item.id}>
                 {item.snippet && item.snippet.thumbnails && item.snippet.thumbnails.standard && (
-                  <img src={item.snippet.thumbnails.standard.url} alt='video' />
+                  <img src={item.snippet.thumbnails.standard.url} alt={item.snippet.title} />
                 )}
                 <div className="home-card-txt">
                   <h4>{item.snippet && item.snippet.title && item.snippet.title.slice(0, 80)}</h4>
