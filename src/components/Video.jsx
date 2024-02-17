@@ -1,13 +1,16 @@
 import '../styles/video.css'
+import Similar from './Similar';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AiTwotoneLike } from "react-icons/ai";
-import React, { useEffect, useState } from 'react';
 import { FaRegEye, FaCommentDots, FaClock } from "react-icons/fa";
 
 const Video = () => {
   const { videoId } = useParams();
+  const [loading, setLoading] = useState(true)
   const [videoData, setVideoData] = useState(null);
   const API_KEY = 'AIzaSyBqE8OMbdKd-7NOT_LBvkgATb8huk3sPHI';
+
 
   useEffect(() => {
     const fetchVideoData = async () => {
@@ -20,6 +23,7 @@ const Video = () => {
         if (data.items.length === 0) {
           throw new Error('Video not found');
         }
+        setLoading(false)
         setVideoData(data.items[0]);
         console.log(data.items[0]);
       } catch (error) {
@@ -28,13 +32,18 @@ const Video = () => {
     };
 
     fetchVideoData();
-  }, [videoId, API_KEY]);
+  }, [videoId, API_KEY, setLoading]);
 
-  if (!videoData) return <div>Loading...</div>;
 
   return (
     <div className="video">
-        <div className="video-card">
+        {loading ? (
+          <div className='loading-card'>
+            <div className="loading"></div>
+          </div>
+        ) : (
+          <>
+          <div className="video-card">
             <iframe title={videoData.snippet.title} src={`https://www.youtube.com/embed/${videoData.id}`} className='video-pl'></iframe>
             <div className="video-content">
                 <h2>{videoData.snippet.title}</h2>
@@ -45,7 +54,12 @@ const Video = () => {
                     <div><FaClock /> {videoData.snippet.publishedAt.slice(0, 10)}</div>
                 </div>
             </div>
+          </div>
+          <div className="similar">
+          <Similar />
         </div>
+        </>
+        )}
     </div>
   );
 };

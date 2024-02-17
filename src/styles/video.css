@@ -1,16 +1,17 @@
 .video {
     top: 80px;
+    left: 30px;
     width: 100%;
     height: 100vh;
     display: flex;
     position: absolute;
     align-items: center;
     padding-bottom: 2rem;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .video-card {
-    width: 80%;
+    width: 70%;
     height: 100%;
     padding: 10px;
 }
@@ -32,10 +33,10 @@
     height: 70px;
     padding: 5px;
     display: flex;
-    align-items: center;
     margin-top: 1rem;
-    border-radius: 10px;
     background: #222;
+    align-items: center;
+    border-radius: 10px;
 }
 
 .video-body div:first-child {
@@ -49,4 +50,106 @@
     margin-left: 1rem;
     align-items: center;
     justify-content: space-evenly;
+}
+
+.video-body div:last-child {
+    width: 120px;
+}
+
+.similar {
+    width: 320px;
+    height: 100%;
+    display: block;
+    overflow: scroll;
+}
+
+.similar::-webkit-scrollbar {
+    display: none;
+}
+
+.similar-card {
+    color: #fff;
+    text-decoration: none;
+}
+
+.similar-card-div {
+    width: 310px;
+    height: 200px;
+    margin-top: 2rem;
+    text-decoration: none;
+}
+
+.similar-card-div img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.similar-card-div p {
+    margin-top: 0.5rem;
+}
+
+/* MEDIA SCNREEN */
+
+@media only screen and (max-width: 1300px) {
+    .video {
+        left: 80px;
+        display: block;
+        justify-content: center;
+    }
+
+    .video-card {
+        width: 90%;
+    }
+
+    .similar {
+        width: 95%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .similar-card {
+        height: 270px;
+        margin-left: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .video {
+        left: 0;
+        padding-bottom: 15rem;
+    }
+
+    .video-card {
+        width: 100%;
+    }
+
+    .similar {
+        width: 100%;
+        height: 500px;
+        padding: 10px;
+        margin-top: 3rem;
+        padding-bottom: 5rem;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .video-card {
+        width: 100%;
+    }
+
+    .video-content h2 {
+        font-size: 20px;
+    }
+
+    .video-body div:last-child {
+        display: none;
+    }
+
+    .similar {
+        margin-top: 6rem;
+    }
 }

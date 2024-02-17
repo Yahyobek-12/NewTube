@@ -80,8 +80,8 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 5px solid #fff;
-    border-top: 5px solid #A45FD9;
+    border: 5px solid transparent;
+    border-top: 5px solid #2970ff;
     animation: 1s loader linear infinite;
 }
 
