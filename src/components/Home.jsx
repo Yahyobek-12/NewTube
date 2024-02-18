@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom'
 import { GlobalContext } from '../provider/provider'
 
 const Home = () => {
-  const { homeVideos, loading } = useContext(GlobalContext);
+  const { homeVideos, loading, saveToHistory  } = useContext(GlobalContext);
+  const saveVideo = (videoData) => {
+    saveToHistory(videoData)
+  }
 
   return (
     <div className='home'>
@@ -18,7 +21,8 @@ const Home = () => {
         ) : (
           <>
             {homeVideos.map(item => (
-              <Link to={`/video/${item.id}`} className="home-card animate__animated animate__fadeIn" key={item.id}>
+              <Link to={`/video/${item.id}`} className="home-card animate__animated animate__fadeIn" key={item.id}
+              onClick={() => saveVideo(item)}>
                 {item.snippet && item.snippet.thumbnails && item.snippet.thumbnails.standard && (
                   <img src={item.snippet.thumbnails.standard.url} alt={item.snippet.title} />
                 )}
