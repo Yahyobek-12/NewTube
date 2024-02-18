@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
 
 @font-face {
     font-family: myFamily;
@@ -29,8 +29,9 @@
 }
 
 .logo h2 {
-    letter-spacing: 5px;
-    font-family: myFamily;
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .logo img {
